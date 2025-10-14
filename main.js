@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require("electron/main");
 // import { app, BrowserWindow } from "electron";
 const path = require("node:path");
+require("update-electron-app")();
 
 const createWindow = () => {
   const win = new BrowserWindow({

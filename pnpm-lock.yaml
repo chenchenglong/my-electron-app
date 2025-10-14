@@ -8,6 +8,9 @@ dependencies:
   electron-squirrel-startup:
     specifier: ^1.0.1
     version: 1.0.1
+  update-electron-app:
+    specifier: ^3.1.1
+    version: 3.1.1
 
 devDependencies:
   '@electron-forge/cli':
@@ -2083,6 +2086,12 @@ packages:
       pump: 3.0.3
     dev: true
 
+  /github-url-to-object@4.0.6:
+    resolution: {integrity: sha1-XqhwHcjDNrjVgtw/pb+WQWXDs2U=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/github-url-to-object/download/github-url-to-object-4.0.6.tgz}
+    dependencies:
+      is-url: 1.2.4
+    dev: false
+
   /glob-parent@5.1.2:
     resolution: {integrity: sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/glob-parent/download/glob-parent-5.1.2.tgz}
     engines: {node: '>= 6'}
@@ -2357,6 +2366,10 @@ packages:
     resolution: {integrity: sha1-PybHaoCVk7Ur+i7LVxDtJ3m1Iqc=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/is-unicode-supported/download/is-unicode-supported-0.1.0.tgz}
     engines: {node: '>=10'}
     dev: true
+
+  /is-url@1.2.4:
+    resolution: {integrity: sha1-BKTfRtKMTP89c9Af8Gq+sxihqlI=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/is-url/download/is-url-1.2.4.tgz}
+    dev: false
 
   /isbinaryfile@4.0.10:
     resolution: {integrity: sha1-DFteMMJVei8G/r03tzIpRqruQrM=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/isbinaryfile/download/isbinaryfile-4.0.10.tgz}
@@ -2700,7 +2713,6 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha1-V0yBOM4dK1hh8LRFedut1gxmFbI=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/ms/download/ms-2.1.3.tgz}
-    dev: true
 
   /mute-stream@1.0.0:
     resolution: {integrity: sha1-4xvZ/mLwrtI1IKpDJOpmcVMeAT4=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/mute-stream/download/mute-stream-1.0.0.tgz}
@@ -3602,6 +3614,13 @@ packages:
       escalade: 3.2.0
       picocolors: 1.1.1
     dev: true
+
+  /update-electron-app@3.1.1:
+    resolution: {integrity: sha512-7duRr6sYn014tifhKgT/5i8N+6xLzmJVJ8hVtNrHXlIDNP6QbRe6VxZ1hSi2UH5oJPzhor/PH7yKU9em5xjRzQ==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/update-electron-app/-/update-electron-app-3.1.1.tgz}
+    dependencies:
+      github-url-to-object: 4.0.6
+      ms: 2.1.3
+    dev: false
 
   /username@5.1.0:
     resolution: {integrity: sha1-p/kyWtzi0BZkSM3VXUmFsTYPJQg=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/username/download/username-5.1.0.tgz}
