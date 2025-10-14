@@ -31,6 +31,9 @@ devDependencies:
   '@electron-forge/plugin-fuses':
     specifier: ^7.10.2
     version: 7.10.2(@electron/fuses@1.8.0)
+  '@electron-forge/publisher-github':
+    specifier: ^7.10.2
+    version: 7.10.2
   '@electron/fuses':
     specifier: ^1.8.0
     version: 1.8.0
@@ -241,6 +244,27 @@ packages:
     engines: {node: '>= 16.4.0'}
     dependencies:
       '@electron-forge/shared-types': 7.10.2
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
+    dev: true
+
+  /@electron-forge/publisher-github@7.10.2:
+    resolution: {integrity: sha512-jwFfTiA6kBjTzHKxEyGeyM9KKBDhUExY8PdAVAfSiXvgfcPuPJSqm8jJb/q7XY+44JO9zLUEvNhHyWQpVIFKcg==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@electron-forge/publisher-github/-/publisher-github-7.10.2.tgz}
+    engines: {node: '>= 16.4.0'}
+    dependencies:
+      '@electron-forge/publisher-base': 7.10.2
+      '@electron-forge/shared-types': 7.10.2
+      '@octokit/core': 5.2.2
+      '@octokit/plugin-retry': 6.1.0(@octokit/core@5.2.2)
+      '@octokit/request-error': 5.1.1
+      '@octokit/rest': 20.1.2
+      '@octokit/types': 6.41.0
+      chalk: 4.1.2
+      debug: 4.4.3
+      fs-extra: 10.1.0
+      log-symbols: 4.1.0
+      mime-types: 2.1.35
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -741,6 +765,131 @@ packages:
       rimraf: 3.0.2
     dev: true
 
+  /@octokit/auth-token@4.0.0:
+    resolution: {integrity: sha1-QNID6oJ7nxf0KinGr7k7d0XvgMc=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/auth-token/download/@octokit/auth-token-4.0.0.tgz}
+    engines: {node: '>= 18'}
+    dev: true
+
+  /@octokit/core@5.2.2:
+    resolution: {integrity: sha512-/g2d4sW9nUDJOMz3mabVQvOGhVa4e/BN/Um7yca9Bb2XTzPPnfTWHWQg+IsEYO7M3Vx+EXvaM/I2pJWIMun1bg==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/core/-/core-5.2.2.tgz}
+    engines: {node: '>= 18'}
+    dependencies:
+      '@octokit/auth-token': 4.0.0
+      '@octokit/graphql': 7.1.1
+      '@octokit/request': 8.4.1
+      '@octokit/request-error': 5.1.1
+      '@octokit/types': 13.10.0
+      before-after-hook: 2.2.3
+      universal-user-agent: 6.0.1
+    dev: true
+
+  /@octokit/endpoint@9.0.6:
+    resolution: {integrity: sha512-H1fNTMA57HbkFESSt3Y9+FBICv+0jFceJFPWDePYlR/iMGrwM5ph+Dd4XRQs+8X+PUFURLQgX9ChPfhJ/1uNQw==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/endpoint/-/endpoint-9.0.6.tgz}
+    engines: {node: '>= 18'}
+    dependencies:
+      '@octokit/types': 13.10.0
+      universal-user-agent: 6.0.1
+    dev: true
+
+  /@octokit/graphql@7.1.1:
+    resolution: {integrity: sha512-3mkDltSfcDUoa176nlGoA32RGjeWjl3K7F/BwHwRMJUW/IteSa4bnSV8p2ThNkcIcZU2umkZWxwETSSCJf2Q7g==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/graphql/-/graphql-7.1.1.tgz}
+    engines: {node: '>= 18'}
+    dependencies:
+      '@octokit/request': 8.4.1
+      '@octokit/types': 13.10.0
+      universal-user-agent: 6.0.1
+    dev: true
+
+  /@octokit/openapi-types@12.11.0:
+    resolution: {integrity: sha1-2lY41k8rkZvKic5mAtBZ8bUtPvA=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/openapi-types/download/@octokit/openapi-types-12.11.0.tgz}
+    dev: true
+
+  /@octokit/openapi-types@24.2.0:
+    resolution: {integrity: sha512-9sIH3nSUttelJSXUrmGzl7QUBFul0/mB8HRYl3fOlgHbIWG+WnYDXU3v/2zMtAvuzZ/ed00Ei6on975FhBfzrg==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/openapi-types/-/openapi-types-24.2.0.tgz}
+    dev: true
+
+  /@octokit/plugin-paginate-rest@11.4.4-cjs.2(@octokit/core@5.2.2):
+    resolution: {integrity: sha512-2dK6z8fhs8lla5PaOTgqfCGBxgAv/le+EhPs27KklPhm1bKObpu6lXzwfUEQ16ajXzqNrKMujsFyo9K2eaoISw==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-11.4.4-cjs.2.tgz}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      '@octokit/core': '5'
+    dependencies:
+      '@octokit/core': 5.2.2
+      '@octokit/types': 13.10.0
+    dev: true
+
+  /@octokit/plugin-request-log@4.0.1(@octokit/core@5.2.2):
+    resolution: {integrity: sha512-GihNqNpGHorUrO7Qa9JbAl0dbLnqJVrV8OXe2Zm5/Y4wFkZQDfTreBzVmiRfJVfE4mClXdihHnbpyyO9FSX4HA==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/plugin-request-log/-/plugin-request-log-4.0.1.tgz}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      '@octokit/core': '5'
+    dependencies:
+      '@octokit/core': 5.2.2
+    dev: true
+
+  /@octokit/plugin-rest-endpoint-methods@13.3.2-cjs.1(@octokit/core@5.2.2):
+    resolution: {integrity: sha512-VUjIjOOvF2oELQmiFpWA1aOPdawpyaCUqcEBc/UOUnj3Xp6DJGrJ1+bjUIIDzdHjnFNO6q57ODMfdEZnoBkCwQ==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-13.3.2-cjs.1.tgz}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      '@octokit/core': ^5
+    dependencies:
+      '@octokit/core': 5.2.2
+      '@octokit/types': 13.10.0
+    dev: true
+
+  /@octokit/plugin-retry@6.1.0(@octokit/core@5.2.2):
+    resolution: {integrity: sha512-WrO3bvq4E1Xh1r2mT9w6SDFg01gFmP81nIG77+p/MqW1JeXXgL++6umim3t6x0Zj5pZm3rXAN+0HEjmmdhIRig==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/plugin-retry/-/plugin-retry-6.1.0.tgz}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      '@octokit/core': '5'
+    dependencies:
+      '@octokit/core': 5.2.2
+      '@octokit/request-error': 5.1.1
+      '@octokit/types': 13.10.0
+      bottleneck: 2.19.5
+    dev: true
+
+  /@octokit/request-error@5.1.1:
+    resolution: {integrity: sha512-v9iyEQJH6ZntoENr9/yXxjuezh4My67CBSu9r6Ve/05Iu5gNgnisNWOsoJHTP6k0Rr0+HQIpnH+kyammu90q/g==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/request-error/-/request-error-5.1.1.tgz}
+    engines: {node: '>= 18'}
+    dependencies:
+      '@octokit/types': 13.10.0
+      deprecation: 2.3.1
+      once: 1.4.0
+    dev: true
+
+  /@octokit/request@8.4.1:
+    resolution: {integrity: sha512-qnB2+SY3hkCmBxZsR/MPCybNmbJe4KAlfWErXq+rBKkQJlbjdJeS85VI9r8UqeLYLvnAenU8Q1okM/0MBsAGXw==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/request/-/request-8.4.1.tgz}
+    engines: {node: '>= 18'}
+    dependencies:
+      '@octokit/endpoint': 9.0.6
+      '@octokit/request-error': 5.1.1
+      '@octokit/types': 13.10.0
+      universal-user-agent: 6.0.1
+    dev: true
+
+  /@octokit/rest@20.1.2:
+    resolution: {integrity: sha512-GmYiltypkHHtihFwPRxlaorG5R9VAHuk/vbszVoRTGXnAsY60wYLkh/E2XiFmdZmqrisw+9FaazS1i5SbdWYgA==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/rest/-/rest-20.1.2.tgz}
+    engines: {node: '>= 18'}
+    dependencies:
+      '@octokit/core': 5.2.2
+      '@octokit/plugin-paginate-rest': 11.4.4-cjs.2(@octokit/core@5.2.2)
+      '@octokit/plugin-request-log': 4.0.1(@octokit/core@5.2.2)
+      '@octokit/plugin-rest-endpoint-methods': 13.3.2-cjs.1(@octokit/core@5.2.2)
+    dev: true
+
+  /@octokit/types@13.10.0:
+    resolution: {integrity: sha512-ifLaO34EbbPj0Xgro4G5lP5asESjwHracYJvVaPIyXMuiuXLlhic3S47cBdTb+jfODkTE5YtGCLt3Ay3+J97sA==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/types/-/types-13.10.0.tgz}
+    dependencies:
+      '@octokit/openapi-types': 24.2.0
+    dev: true
+
+  /@octokit/types@6.41.0:
+    resolution: {integrity: sha1-5Y73jXhZbS+335xiWYAkZLX4SgQ=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@octokit/types/download/@octokit/types-6.41.0.tgz}
+    dependencies:
+      '@octokit/openapi-types': 12.11.0
+    dev: true
+
   /@sindresorhus/is@4.6.0:
     resolution: {integrity: sha1-PHycRuZ4/u/nouW7YJ09vWZf+z8=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@sindresorhus/is/download/@sindresorhus/is-4.6.0.tgz}
     engines: {node: '>=10'}
@@ -1098,6 +1247,10 @@ packages:
     hasBin: true
     dev: true
 
+  /before-after-hook@2.2.3:
+    resolution: {integrity: sha1-xR6AnIGk41QIRCK5smutiCScUXw=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/before-after-hook/download/before-after-hook-2.2.3.tgz}
+    dev: true
+
   /bl@4.1.0:
     resolution: {integrity: sha1-RRU1JkGCvsL7vIOmKrmM8R2fezo=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/bl/download/bl-4.1.0.tgz}
     dependencies:
@@ -1115,6 +1268,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /bottleneck@2.19.5:
+    resolution: {integrity: sha1-XfC5D1n9R2VuvmPHiphBkgXK3ZE=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/bottleneck/download/bottleneck-2.19.5.tgz}
+    dev: true
 
   /brace-expansion@1.1.12:
     resolution: {integrity: sha512-9T9UjW3r0UW5c1Q7GTwllptXwhvYmEzFhzMfZ9H7FQWt+uZePjZPjBP/W1ZEyZ1twGWom5/56TF4lPcqjnDHcg==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/brace-expansion/-/brace-expansion-1.1.12.tgz}
@@ -1438,6 +1595,10 @@ packages:
       object-keys: 1.1.1
     dev: true
     optional: true
+
+  /deprecation@2.3.1:
+    resolution: {integrity: sha1-Y2jL20Cr8zc7UlrIfkomDDpwCRk=, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/deprecation/download/deprecation-2.3.1.tgz}
+    dev: true
 
   /detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/detect-libc/-/detect-libc-2.1.2.tgz}
@@ -3415,6 +3576,10 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       imurmurhash: 0.1.4
+    dev: true
+
+  /universal-user-agent@6.0.1:
+    resolution: {integrity: sha512-yCzhz6FN2wU1NiiQRogkTQszlQSlpWaw8SvVegAc+bDxbzHgh1vX8uIe8OYyMH6DwH+sdTJsgMl36+mSMdRJIQ==, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/universal-user-agent/-/universal-user-agent-6.0.1.tgz}
     dev: true
 
   /universalify@0.1.2:
