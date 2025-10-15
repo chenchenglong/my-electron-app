@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require("electron/main");
 // import { app, BrowserWindow } from "electron";
 const path = require("node:path");
-require("update-electron-app")();
+// require("update-electron-app")();
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -13,6 +13,7 @@ const createWindow = () => {
   });
 
   win.loadFile("index.html");
+  // win.loadURL("https://juejin.cn/post/6903352556656230408");
 };
 
 app.whenReady().then(() => {
