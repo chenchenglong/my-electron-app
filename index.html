@@ -11,14 +11,38 @@
       content="default-src 'self'; script-src 'self'"
     />
     <title>Hello from Electron renderer!</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-    <p id="info"></p>
-    <div id="button">按钮</div>
-    <div id="button-quit-win">关闭最近窗口</div>
-    <div id="button-quit-app">关闭应用</div>
+    <div class="row">
+      <h1>Hello from Electron renderer!</h1>
+      <p>👋</p>
+      <p id="info"></p>
+    </div>
+
+    <div class="row">
+      <div class="desc">####创建新窗口</div>
+      <div id="button" class="btn">按钮</div>
+    </div>
+    <div class="row">
+      <div class="desc">####关闭窗口</div>
+      <div id="button-quit-win" class="btn">关闭最近窗口</div>
+      <div id="button-quit-app" class="btn">关闭应用</div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="desc">####渲染器进程到主进程（单向）</div>
+      Title: <input id="title" />
+      <button id="btn" type="button">Set</button>
+      <script src="./renderer.js"></script>
+    </div> -->
+
+    <div class="row">
+      <div class="desc">####渲染器进程到主进程（双向）</div>
+      <div id="btn" class="btn">Open a File</div>
+      File path: <strong id="filePath"></strong>
+    </div>
   </body>
+
   <script src="./renderer.js"></script>
 </html>

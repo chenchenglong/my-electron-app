@@ -27,3 +27,26 @@ buttonQuitApp.addEventListener("click", () => {
 
 console.log(window.myAPI);
 // => { desktop: true }
+
+/**
+ * 渲染器进程到主进程（单向）
+ */
+// const setButton = document.getElementById("btn");
+// const titleInput = document.getElementById("title");
+// setButton.addEventListener("click", () => {
+//   const title = titleInput.value;
+//   window.electronAPI.setTitle(title);
+// });
+
+/**
+ * 渲染器进程到主进程（双向）
+ */
+const btnOpenFile = document.getElementById("btn");
+const filePathElement = document.getElementById("filePath");
+
+btnOpenFile.addEventListener("click", async () => {
+  console.log("####btnOpenFile");
+  const filePath = await window.electronAPI.openFile();
+  console.log("####filePath", filePath);
+  filePathElement.innerText = filePath;
+});

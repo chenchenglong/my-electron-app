@@ -1,7 +1,13 @@
-const { app, BrowserWindow, ipcMain } = require("electron/main");
+const { app, BrowserWindow, ipcMain, dialog } = require("electron/main");
 // import { app, BrowserWindow } from "electron";
 const path = require("node:path");
 // require("update-electron-app")();
+
+function handleSetTitle(event, title) {
+  const webContents = event.sender;
+  const win = BrowserWindow.fromWebContents(webContents);
+  win.setTitle(title);
+}
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -37,11 +43,22 @@ const quitWebWindow = () => {
   win.close();
 };
 
+async function handleFileOpen() {
+  console.log("####handleFileOpen");
+  const { canceled, filePaths } = await dialog.showOpenDialog({});
+  if (!canceled) {
+    console.log("####filePaths", filePaths);
+    return filePaths[0];
+  }
+}
+
 const quitApp = () => {
   app.quit();
 };
 
 app.whenReady().then(() => {
+  ipcMain.on("set-title", handleSetTitle);
+
   ipcMain.handle("ping", () => {
     console.log("####pong");
     createWebWindow();
@@ -56,6 +73,8 @@ app.whenReady().then(() => {
     console.log("####quitApp");
     quitApp();
   });
+
+  ipcMain.handle("dialog:openFile", handleFileOpen);
 
   createWindow();
 
